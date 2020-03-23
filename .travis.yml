@@ -5,7 +5,7 @@ node_js:
 
 before_install:
   # Decrypt the private key
-  - openssl aes-256-cbc -K $encrypted_16b1459e69da_key -iv $encrypted_16b1459e69da_iv -in travis_rsa.enc -out ~\/.ssh/travis_rsa -d
+  - openssl aes-256-cbc -K $encrypted_16b1459e69da_key -iv $encrypted_16b1459e69da_iv -in .travis/travis_rsa.enc -out ~\/.ssh/travis_rsa -d
   # Set the permission of the key
   - chmod 600 ~/.ssh/travis_rsa
   # Start SSH agent
