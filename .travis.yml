@@ -18,6 +18,6 @@ after_script:
 
 branches:
   only:
-    - hexo
+    - master
 global:
     - GH_REF: github.com/dengxit/dengxit.github.io.git
