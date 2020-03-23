@@ -1,19 +1,31 @@
 language: node_js
+
 node_js:
-  - '12.13.1'
+  - stable
+
+before_install:
+  # Decrypt the private key
+  - openssl aes-256-cbc -K $encrypted_16b1459e69da_key -iv $encrypted_16b1459e69da_iv -in travis_rsa.enc -out ~\/.ssh/travis_rsa -d
+  # Set the permission of the key
+  - chmod 600 ~/.ssh/travis_rsa
+  # Start SSH agent
+  - eval $(ssh-agent)
+  # Add the private key to the system
+  - ssh-add ~/.ssh/travis_rsa
+  # Copy SSH config
+  - cp .travis/ssh_config ~/.ssh/config
+  # Set Git config
+  - git config --global user.name "dengxit"
+  - git config --global user.email dengxit@gmail.com
+  # Install Hexo
+  - npm install hexo@beta -g
+  # Clone the repository
+  - git clone https://github.com/dengxit/dengxit.github.io .deploy
+
+script:
+  - hexo generate
+  - hexo deploy
 
 branches:
   only:
     - master
-
-before_install:
-  - git config --global user.name "dengxit"
-  - git config --global user.email "dengxit@gmail.com"
-  - sed -i'' "s~https://github.com/dengxit/hexoblog.git~https://${GH_TOKEN}@github.com/dengxit/hexoblog.git~" _config.yml
-
-install:
-  - npm install hexo-cli -g
-  - npm install
-
-script:
-  - npm run deploy

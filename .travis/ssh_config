@@ -1,0 +1,5 @@
+Host github.com
+  User dengxit@gimal.com
+  StrictHostKeyChecking no
+  IdentityFile ~/.ssh/travis_rsa
+  IdentitiesOnly yes
