@@ -9,7 +9,7 @@ branches:
 before_install:
   - git config --global user.name "dengxit"
   - git config --global user.email "dengxit@gmail.com"
-  - sed -i'' "s~https://github.com/dengxit/hexoblog.git~https://${GH_TOKEN}@github.com/dengxit/hexoblog.git~" _config.yml
+  - sed -i'' "s~https://github.com/dengxit/hexoblog.git~https://${GH_TOKEN}@github.com/dengxit/dengxit.github.io.git~" _config.yml
 
 install:
   - npm install hexo-cli -g
