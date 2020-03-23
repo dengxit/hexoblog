@@ -1,24 +1,19 @@
 language: node_js
-node_js: stable
-
-install:
-  - npm install
-
-script:
-  - hexo g
-
-after_script:
-  - cd ./public
-  - git init 
-  - git config user.name "dengxit"
-  - git config user.email "dengxit@github.com"
-  - git add .
-  - git commit -m "Update docs"
-  - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:travis-ci
+node_js:
+  - stable
 
 branches:
   only:
-    - travis-ci
+    - master
 
-global:
-   - GH_REF: github.com:dengxit/dengxit.github.io.git
+before_install:
+  - git config --global user.name "dengxit"
+  - git config --global user.email "dengxit@gmail.com"
+  - sed -i'' "s~https://github.com/dengxit/hexoblog.git~https://${ACCESS_TOKEN}@github.com/dengxit/hexoblog.git~" _config.yml
+
+install:
+  - npm install hexo-cli -g
+  - npm install
+
+script:
+  - npm run deploy
