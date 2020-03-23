@@ -1,5 +1,5 @@
 Host github.com
-  User dengxit@gimal.com
+  User dengxit@gmail.com
   StrictHostKeyChecking no
   IdentityFile ~/.ssh/travis_rsa
   IdentitiesOnly yes
