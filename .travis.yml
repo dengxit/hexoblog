@@ -19,7 +19,7 @@ before_install:
   - git config --global user.name "dengxit"
   - git config --global user.email dengxit@gmail.com
   # Install Hexo
-  - npm install hexo@beta -g
+  - npm install hexo-cli -g
   # Clone the repository
   - git clone https://github.com/dengxit/dengxit.github.io .deploy
 
