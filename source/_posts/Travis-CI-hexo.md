@@ -37,7 +37,7 @@ cat travis_rsa.pub
 #这部若出错后续部署会导致 github permission deny
 ````
 
-####  安装travis
+####  安装Travis
 
 ````
 gem install travis
@@ -54,7 +54,7 @@ sudo chown -R your_name:your_name /Library/Ruby/Gems/2.6.0
  
 ````
 
-####  配置travis
+####  配置Travis
 ````
 travis login --pro 
 
@@ -110,7 +110,7 @@ branches:
 
 #### 部署过程中的深坑
 
-*  travis CI构建一直提示 iv undefined
+*  Travis CI构建一直提示 iv undefined
 ````
 travis 有两个站点 travis-ci.org 和 travis-ci.com
 travis login --pro   #travis-ci.com --auto 是 org
@@ -118,7 +118,7 @@ travis encrypt-file ~/.ssh/travis_rsa --add --com # --com 代表 travis-ci.com
 #注意不要弄混了，在执行命令后查看travis 项目设置中是否自动添加了对应的encrypted_xxxxxxda_key 和 encrypted_xxxxxxda_iv
 
 ````
-*  travis CI自动构建部署之后，博客页面空白
+*  Travis CI自动构建部署之后，博客页面空白
 
 ````
 #原因是使用了next主题配置
