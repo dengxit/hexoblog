@@ -99,3 +99,12 @@ deploy:
   repo: git@github.com:dengxit/dengxit.github.io.git
   branch: master
 
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: false
+  total_time: false
+  exclude_codeblock: true
+  awl: 2
+  wpm: 300
+  suffix: "mins."
