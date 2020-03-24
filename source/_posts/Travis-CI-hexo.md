@@ -27,13 +27,14 @@ cd .travis
 touch ssh_config
 ````
 
-* Deploy Key
+#### Deploy Key
 ````
 cd ～/.ssh
 ssh-keygen -t rsa -C "your_email@example.com"
-建立的rsa 命名为travis_rsa 以区分
+#建立的rsa 命名为travis_rsa 以区分
 cat travis_rsa.pub
-将控制台输出的密钥拷贝至 "github.io" 项目的 Deploy Key中
+#将控制台输出的密钥拷贝至 "github.io" 项目的 Deploy Key中
+#这部若出错后续部署会导致 github permission deny
 ````
 
 ####  安装travis
@@ -106,6 +107,41 @@ branches:
   only:
     - master
 ````
+
+#### 部署过程中的深坑
+
+*  travis CI构建一直提示 iv undefined
+````
+travis 有两个站点 travis-ci.org 和 travis-ci.com
+travis login --pro   #travis-ci.com --auto 是 org
+travis encrypt-file ~/.ssh/travis_rsa --add --com # --com 代表 travis-ci.com
+#注意不要弄混了，在执行命令后查看travis 项目设置中是否自动添加了对应的encrypted_xxxxxxda_key 和 encrypted_xxxxxxda_iv
+
+````
+*  travis CI自动构建部署之后，博客页面空白
+
+````
+#原因是使用了next主题配置
+#删除themes/next的.git和.gitignore,执行下方命令
+cd hexoblog
+git rm --cached themes/next
+git add themes/next
+git push origin master
+
+````
+
+#### 参考文章
+
+[Github集成TravisCI：自动发布](https://github.com/levy9527/blog/issues/1)
+[Travis自动部署网站](https://zespia.tw/blog/2015/01/21/continuous-deployment-to-github-with-travis/)
+[使用Travis CI自动构建Hexo静态博客](https://researchlab.github.io/2016/05/08/travis-ci-deploy-hexo-blog/)
+[使用 Travis 自动化部署 Hexo Blog](https://g2ex.top/2019/06/28/hexo-with-travis-ci/)
+[Mac OS X 下使用 Ruby Gem 的两个坑](https://www.jianshu.com/p/bb9fe3fd45d0)
+
+
+#### Hexo 主题优化
+
+[Next主题优化](https://www.jianshu.com/p/3ff20be8574c)
 
 
 
