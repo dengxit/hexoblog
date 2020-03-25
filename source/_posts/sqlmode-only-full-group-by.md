@@ -3,7 +3,7 @@ layout: mysql
 title: Sql-mode :ONLY_FULL_GROUP_BY
 date: 2020-03-20 14:52:26
 tags:
- - mysql
+ - Mysql
 ---
 ##### ONLY_FULL_GROUP_BY 引起的一个问题
 ```
