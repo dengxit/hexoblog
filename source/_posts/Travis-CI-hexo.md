@@ -19,8 +19,9 @@ tags:
 
 #### 部署 Travis CI
 
-* 本地 hexoblog 下建立travis相关文件
+* 建立travis相关文件
 ````
+cd hexoblog #本地 hexoblog 下
 mkdir .travis
 touch .travis.yml
 cd .travis
@@ -34,6 +35,7 @@ ssh-keygen -t rsa -C "your_email@example.com"
 #建立的rsa 命名为travis_rsa 以区分
 cat travis_rsa.pub
 #将控制台输出的密钥拷贝至 "github.io" 项目的 Deploy Key中
+#勾选Allow write access
 #这部若出错后续部署会导致 github permission deny
 ````
 
@@ -55,10 +57,11 @@ sudo chown -R your_name:your_name /Library/Ruby/Gems/2.6.0
 ````
 
 ####  配置Travis
+使用github 账号授权登陆 travis-ci.com
 ````
 travis login --pro 
 
-cd hexoblig/.travis
+cd hexoblog/.travis
 travis encrypt-file ~/.ssh/travis_rsa --add --com
 #生成了$encrypted_xxxxxxda_key 和 $encrypted_xxxxxxda_iv
 vi ssh_config
