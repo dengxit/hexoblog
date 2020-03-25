@@ -26,7 +26,7 @@ tags: Git
 13.git pull
 14.循环1-9开发新功能
 ```
-
+<!-- more -->
 ##### Github初始化设置
 * 生成 ssh key 
 ssh-keygen -t rsa -C "dengxit@gmail.com"
