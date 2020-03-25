@@ -11,6 +11,7 @@ Column 'XXXX' is invalid in the select list because it is not contained in
 either an aggregate function or the GROUP BY clause.
 ```
 这是由于Mysql的 Sql-mode 设置ONLY_FULL_GROUP_BY导致的，在解决这个问题前首先要了解Mysql的Sql-mode
+<!-- more -->
 ##### Sql-mode 介绍 
 * [MySql 5.7 Sql-mode](https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sql-mode-changes)
 * [MySql Handling of GROUP BY](https://dev.mysql.com/doc/refman/5.7/en/group-by-handling.html)

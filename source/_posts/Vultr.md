@@ -11,6 +11,8 @@ tags:
 * Tokyo
 * Centos 7x64
 * $5/mo
+
+<!-- more -->
 #### 部署 Deploy Now
 
 #### 使用vultr搭建ss服务器

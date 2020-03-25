@@ -11,6 +11,7 @@ tags:
 * Hexo 是一个快速、简洁且高效的博客框架，也是本博客所使用的框架
 * [Hexo Docs](https://hexo.io/zh-cn/docs/configuration)
 
+<!-- more -->
 #### 在github构建hexo项目
 
 * 将本地的 "hexoblog" （整个项目的源码）上传至github
