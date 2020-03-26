@@ -28,6 +28,7 @@ touch .travis.yml
 cd .travis
 touch ssh_config
 ````
+![](http://q7t579i7q.bkt.clouddn.com/Travis.png)
 
 #### Deploy Key
 ````
@@ -35,10 +36,10 @@ cd ～/.ssh
 ssh-keygen -t rsa -C "your_email@example.com"
 #建立的rsa 命名为travis_rsa 以区分
 cat travis_rsa.pub
-#将控制台输出的密钥拷贝至 "github.io" 项目的 Deploy Key中
-#勾选Allow write access
-#这部若出错后续部署会导致 github permission deny
 ````
+将控制台输出的密钥拷贝至 "github.io" 项目的 Deploy Key中
+勾选Allow write access
+![](http://q7t579i7q.bkt.clouddn.com/DeployKey.png)
 
 ####  安装Travis
 
@@ -59,6 +60,7 @@ sudo chown -R your_name:your_name /Library/Ruby/Gems/2.6.0
 
 ####  配置Travis
 使用github 账号授权登陆 travis-ci.com
+![](http://q7t579i7q.bkt.clouddn.com/Sign-up-travis.png)
 ````
 travis login --pro 
 
@@ -111,6 +113,8 @@ branches:
   only:
     - master
 ````
+#### 项目更新Push成功Build成功
+![](http://q7t579i7q.bkt.clouddn.com/build-success.png)
 
 #### 部署过程中的深坑
 
