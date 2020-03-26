@@ -77,10 +77,14 @@ branch -2    push    staging
 ##### 修改提交者用户名和邮箱
 当我们有多个不同的代码仓库时，不同仓库信息验证不同。比如gitlab和github所验证的git 配置信息不同，若没有配置好则会出现配置信息未更改而被拒绝push
 ```
+//查看全局git配置信息
+git config --global --list 
 // 设置全局git使用的账号信息
 git config --global user.name "Author Name"
 git config --global user.email "Author Email"
  
+//查看当前项目git配置信息
+ git config --list 
 // 设置当前项目库配置账号信息
 git config user.name "Author Name"
 git config user.email "Author Email
