@@ -28,7 +28,7 @@ touch .travis.yml
 cd .travis
 touch ssh_config
 ````
-![](http://q7t579i7q.bkt.clouddn.com/Travis.png)
+![](https://blog-image-1256046195.cos.ap-chengdu.myqcloud.com/Travis.png)
 
 #### Deploy Key
 ````
@@ -39,7 +39,7 @@ cat travis_rsa.pub
 ````
 将控制台输出的密钥拷贝至 "github.io" 项目的 Deploy Key中
 勾选Allow write access
-![](http://q7t579i7q.bkt.clouddn.com/DeployKey.png)
+![](https://blog-image-1256046195.cos.ap-chengdu.myqcloud.com/DeployKey.png)
 
 ####  安装Travis
 
@@ -60,7 +60,7 @@ sudo chown -R your_name:your_name /Library/Ruby/Gems/2.6.0
 
 ####  配置Travis
 使用github 账号授权登陆 travis-ci.com
-![](http://q7t579i7q.bkt.clouddn.com/Sign-up-travis.png)
+![](https://blog-image-1256046195.cos.ap-chengdu.myqcloud.com/Sign-up-travis.png)
 ````
 travis login --pro 
 
@@ -114,7 +114,7 @@ branches:
     - master
 ````
 #### 项目更新Push成功Build成功
-![](http://q7t579i7q.bkt.clouddn.com/build-success.png)
+![](https://blog-image-1256046195.cos.ap-chengdu.myqcloud.com/build-success.png)
 
 #### 部署过程中的深坑
 
