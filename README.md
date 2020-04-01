@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/dengxit/hexoblog.svg?branch=master)](https://travis-ci.com/github/dengxit/hexoblog)
 ****
-这是dengxit的个人博客站点，记录在成为一名合格的码农道路上的各项点滴
+基于Hexo+GithubPages+TravisCI部署的个人博客
 	
 |Author|dengxit|
 |---|---
