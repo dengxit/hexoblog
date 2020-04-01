@@ -1,7 +1,8 @@
 ---
 title: Git
 date: 2020-03-25 18:13:52
-tags: Git
+tags: 
+ - Git
 ---
 
 
@@ -43,7 +44,8 @@ ssh-add ~/.ssh/github_rsa （链接失败执行）
  
 ##### cherry_pick
  ```
- 将某个分支上特定的更改拉到当前分支
+ #在当前分支将某个分支上特定的commit更改拉到当前分支
+ git cherry-pick commit-sha1
  ```
  
 ##### 撤销 最后 一次错误的commit
@@ -87,9 +89,17 @@ git config --global user.email "Author Email"
  git config --list 
 // 设置当前项目库配置账号信息
 git config user.name "Author Name"
-git config user.email "Author Email
+git config user.email "Author Email"
 
 // 设置本次commit的提交账号信息
 git commit --amend --author="dengxit <dengxit@gmail.com>"
 
 ```
+
+##### 批量删除本地分支
+```
+git branch | grep  "fix" | xargs git branch -d #删除本地名称带 fix 的分支
+git branch | grep  "feature" | xargs git branch -d #删除本地名称带 feature 的分支
+```
+
+详细内容[参考](https://juejin.im/post/5c3b013a5188252580051517)

@@ -2,7 +2,8 @@
 title: Travis-CI+Hexo
 date: 2020-03-25 01:07:11
 tags:
- - 教程
+ - Hexo
+ - Travis-CI
 ---
 
 #### Travis-CI Hexo？

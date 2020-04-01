@@ -2,7 +2,7 @@
 title: 使用Vultr搭建Vpn
 date: 2019-12-01 14:51:14
 tags:
- - 教程
+ - Vpn
 ---
 #### 注册Vultr
 * [Vultr](https://www.vultr.com/?ref=8334405)

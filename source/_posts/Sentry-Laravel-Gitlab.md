@@ -2,7 +2,8 @@
 title: Sentry-Laravel-Gitlab
 date: 2020-03-27 13:10:15
 tags:
- - 教程
+ - Sentry
+ - Laravel
 ---
 
 ##### Sentry
