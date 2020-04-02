@@ -103,3 +103,30 @@ git branch | grep  "feature" | xargs git branch -d #删除本地名称带 featur
 ```
 
 详细内容[参考](https://juejin.im/post/5c3b013a5188252580051517)
+
+##### 更新Git
+
+* [官网下载](https://git-scm.com/download)最新Git
+
+* Mac brew
+```
+# 替换成阿里巴巴的 brew.git 仓库地址:
+cd "$(brew --repo)"
+git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
+ 
+ 
+# 替换成阿里巴巴的 homebrew-core.git 仓库地址:
+cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
+
+brew upgrade git
+```
+* apt-get
+```
+add-apt-repository ppa:git-core/ppa
+apt-get update
+apt-get install -y git
+```
+
+
+

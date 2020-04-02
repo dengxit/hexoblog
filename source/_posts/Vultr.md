@@ -41,3 +41,8 @@ chmod +x shadowsocks.sh
 * [文章参考](https://wistbean.github.io/vultr-vps-bbr-ss.html)
 
 
+#### 付费Vpn推荐
+
+* [baacloud](https://baa.im/1278273)
+
+
