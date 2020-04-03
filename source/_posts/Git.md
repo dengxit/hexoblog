@@ -167,15 +167,21 @@ $ git log --graph  --oneline
 |/
 * 73b8316 parents-3
 
-$ git rev-parse HEAD~
+$ git rev-parse HEAD~1
 441d887
 
-$ git rev-parse HEAD~1
+$ git rev-parse HEAD~2
 73b8316
 
-# 可以看到～只能取到祖先 而要想获得parents-2父提交
+$ git rev-parse HEAD~^2
 
+b43f316
 
+# 可以看到parents-1 有两个父提交 parents-2和parents-3
+～只能获取祖先提交（可以认为一条直线上的），而要想获得parents-2（分叉上的）就要使用^，本例中parents-2可以理解为：
+HEAD的第一个祖先提交（parents-1）的第二个父提交
+
+原文参考：https://scarletsky.github.io/2016/12/29/tilde-and-caret-in-git/
 ```
 
 
