@@ -110,14 +110,18 @@ git branch | grep  "feature" | xargs git branch -d #删除本地名称带 featur
 
 * Mac brew
 ```
-# 替换成阿里巴巴的 brew.git 仓库地址:
+# 替换成中科大 brew.git 仓库地址:
 cd "$(brew --repo)"
-git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
+git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
  
  
-# 替换成阿里巴巴的 homebrew-core.git 仓库地址:
+# 替换成中科大的 homebrew-core.git 仓库地址:
 cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
-git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
+git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
+
+# 替换成中科大的 homebrew-cask.git 仓库地址:
+cd "$(brew --repo)"/Library/Taps/homebrew/homebrew-cask
+git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
 
 brew upgrade git
 ```
@@ -128,5 +132,50 @@ apt-get update
 apt-get install -y git
 ```
 
+##### Git的^和～
+
+```
+# <rev>~<n> 用来表示一个提交的第 n 个祖先提交，如果不指定 n，那么默认为 1
+# <rev>^<n> 用来表示一个提交的第 n 个父提交，如果不指定 n，那么默认为 1
+
+$ git log
+
+71033d09 (HEAD)
+f3ae6db7 (parents)
+b1f73c7d (grandparents)
+....
+
+$ git rev-parse HEAD  
+71033d09
+
+$ git rev-parse HEAD~0
+71033d09
+
+$ git rev-parse HEAD~
+f3ae6db7
+
+$ git rev-parse HEAD~1
+f3ae6db7
+
+#   ~ ^ 的区别
+$ git log --graph  --oneline
+
+* 0e7410e HEAD
+*   441d887 parents-1
+|\
+| * b43f316 parents-2
+|/
+* 73b8316 parents-3
+
+$ git rev-parse HEAD~
+441d887
+
+$ git rev-parse HEAD~1
+73b8316
+
+# 可以看到～只能取到祖先 而要想获得parents-2父提交
+
+
+```
 
 
