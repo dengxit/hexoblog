@@ -137,50 +137,36 @@ apt-get install -y git
 ```
 # <rev>~<n> 用来表示一个提交的第 n 个祖先提交，如果不指定 n，那么默认为 1
 # <rev>^<n> 用来表示一个提交的第 n 个父提交，如果不指定 n，那么默认为 1
-
 $ git log
-
 71033d09 (HEAD)
 f3ae6db7 (parents)
 b1f73c7d (grandparents)
 ....
-
 $ git rev-parse HEAD  
 71033d09
-
 $ git rev-parse HEAD~0
 71033d09
-
 $ git rev-parse HEAD~
 f3ae6db7
-
 $ git rev-parse HEAD~1
 f3ae6db7
-
 #   ~ ^ 的区别
 $ git log --graph  --oneline
-
 * 0e7410e HEAD
 *   441d887 parents-1
 |\
 | * b43f316 parents-2
 |/
 * 73b8316 parents-3
-
 $ git rev-parse HEAD~1
 441d887
-
 $ git rev-parse HEAD~2
 73b8316
-
 $ git rev-parse HEAD~^2
-
 b43f316
-
 # 可以看到parents-1 有两个父提交 parents-2和parents-3
 ～只能获取祖先提交（可以认为一条直线上的），而要想获得parents-2（分叉上的）就要使用^，本例中parents-2可以理解为：
 HEAD的第一个祖先提交（parents-1）的第二个父提交
-
 原文参考：https://scarletsky.github.io/2016/12/29/tilde-and-caret-in-git/
 ```
 
