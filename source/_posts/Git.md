@@ -76,23 +76,37 @@ branch -2    push    staging
 这样branch -2 成了一个受污染分支，但是解决了到staging的冲突
 ```
 
-##### 修改提交者用户名和邮箱
+##### git config 配置
 当我们有多个不同的代码仓库时，不同仓库信息验证不同。比如gitlab和github所验证的git 配置信息不同，若没有配置好则会出现配置信息未更改而被拒绝push
 ```
-//查看全局git配置信息
+# 查看全局git配置信息
 git config --global --list 
-// 设置全局git使用的账号信息
+
+# 设置全局git使用的账号信息
 git config --global user.name "Author Name"
 git config --global user.email "Author Email"
  
-//查看当前项目git配置信息
+# 查看当前项目git配置信息
  git config --list 
-// 设置当前项目库配置账号信息
+ 
+# 设置当前项目库配置账号信息
 git config user.name "Author Name"
 git config user.email "Author Email"
 
 // 设置本次commit的提交账号信息
 git commit --amend --author="dengxit <dengxit@gmail.com>"
+
+
+# git config 增加别名配置
+ git config --global alias.ignore 'update-index --skip-worktree'
+ git config --global alias.unignore 'update-index --no-skip-worktree'
+ 
+ git ignore 文件名称
+ git unignore 文件名称
+ git ls-files -v | grep -i ^S 查看skip-worktree 的文件
+ 
+# git config删除某个别名配置
+ git config  --global --unset alias.ignored
 
 ```
 
