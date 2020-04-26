@@ -11,3 +11,4 @@ tags:
 * [MAC应用分享](https://xclient.info/)
 * [Javascript基础教程](https://wangdoc.com/javascript/index.html)
 * [ES6入门](https://es6.ruanyifeng.com/#docs/intro)
+* [composer 最佳实践](https://learnku.com/php/t/7609/you-have-to-know-17-composer-best-practices-updated-to-22)
