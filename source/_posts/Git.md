@@ -185,3 +185,10 @@ HEAD的第一个祖先提交（parents-1）的第二个父提交
 ```
 
 
+##### Git 文件状态
+
+<img src="https://blog-image-1256046195.cos.ap-chengdu.myqcloud.com/Git-File-Status-1.png"/>
+
+<img src="https://blog-image-1256046195.cos.ap-chengdu.myqcloud.com/Git-File-Status-2.png"/>
+
+
