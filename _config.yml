@@ -98,8 +98,6 @@ deploy:
   type: git
   repo: git@github.com:dengxit/dengxit.github.io.git
   branch: master
-  include:
-    - .nojekyll
 
 symbols_count_time:
   symbols: true
