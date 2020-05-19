@@ -41,4 +41,21 @@ GitLab允许管理员将Sentry连接到GitLab，以允许用户查看GitLab中�
 
 <img src="https://blog-image-1256046195.cos.ap-chengdu.myqcloud.com/Sentry-Test-Receive.png" />
 
+##### Set-Exception-Level
+
+> You can set the severity of an event to one of five values: fatal, error, warning, info, and debug. error is the default, fatal is the most severe and debug is the least severe.
+
+Sentry的默认消息通知发送是error级别的，如果代码中有设置一些诸如逻辑验证的异常抛出应当设立正确的错误级别
+文档中提供了一种实现方式，这样在handler的异常报告处理时可以根据捕捉到的异常类型设置level
+```
+Sentry\configureScope(function (Sentry\State\Scope $scope): void {
+  $scope->setLevel(Sentry\Severity::warning());
+});
+
+```
+在 项目>警报 中也可以设置发送警报的规则
+
+<img src="https://blog-image-1256046195.cos.ap-chengdu.myqcloud.com/Sentry-Alert-Level.png" />
+
+
 
