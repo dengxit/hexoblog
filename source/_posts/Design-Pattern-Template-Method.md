@@ -1,7 +1,8 @@
 ---
 title: Design-Pattern-Template-Method
 date: 2020-05-19 14:00:03
-tags:
+tags: 
+- Design-Pattern
 ---
 
 ##### 模版方法模式 
@@ -10,7 +11,7 @@ tags:
   是一种非常适合框架库的算法骨架。用户只需要实现子类的一种方法，其父类便可去搞定这项工作了。
   是一种分离具体类的简单办法，且可以减少复制粘贴，这也是它常见的原因。
   
-  
+<!-- more -->
 
 ##### Switch Case代码示例
 
