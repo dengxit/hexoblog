@@ -95,4 +95,3 @@ switch ($type) {
 
 如UML图所示，基类中设置了默认的getHeader getFooter方法和抽象方法getContent，每个不同的申请单必须实现自己的getContent设置不同的打印内容，而Header和Footer可以根据需求决定是否在各自类中重写实现。
 
-##### 
