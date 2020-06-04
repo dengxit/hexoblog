@@ -62,8 +62,26 @@ Loaded config default from "/your_code_file_path/.php_cs".
    # fix的文件
 ```
 
+##### PhpStorm配置
 
-##### 遇到的问题
+> 项目设置了php-cs-fixer后，在phpstorm中会对没有按照规则设置的代码作出警示，可以通过设置一键补全格式
+
+* 设置external tools
+<img src="https://blog-image-1256046195.cos.ap-chengdu.myqcloud.com/add-external-tools.png" />
+<img src="https://blog-image-1256046195.cos.ap-chengdu.myqcloud.com/external-tool-setting.png" />
+```
+#Program 是安装的php-cs-fixer包的位置
+#Arguments  fix --verbose --config=$ProjectFileDir$/.php_cs --path-mode=intersection "$ProjectFileDir$"  #该项目路径下放.php_cs配置
+#Working diretory 设置常量 $ProjectFileDir$  
+```
+
+* 设置快捷键
+<img src="https://blog-image-1256046195.cos.ap-chengdu.myqcloud.com/keymap-setting.png" />
+
+* [文章参考](https://medium.com/hackernoon/how-to-configure-phpstorm-to-use-php-cs-fixer-1844991e521f)
+
+
+##### 常见问题
 
 ```
 # MacOS 10.15 Catalina

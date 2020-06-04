@@ -106,7 +106,12 @@ git commit --amend --author="dengxit <dengxit@gmail.com>"
  git ls-files -v | grep -i ^S 查看skip-worktree 的文件
  
 # git config删除某个别名配置
+ git config  --global --unset <name>
  git config  --global --unset alias.ignored
+ 
+# git config 更改某个别名的设置
+git config <name> "value"
+git config remote.origin.url "site.git"
 
 ```
 
