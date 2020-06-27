@@ -25,7 +25,7 @@ tags:
 
 #### 空间众包
 
-> 这部分内容目前我只处于初步了解概念的情况，于是以老师最新三篇文章中都出现的关键词Task Assignment在知网检索了部分文章，挑选了一些，如果后续有幸能在老师指导下以这方向为论文课题我会继续深入学习了解。 
+> 这部分内容目前我只处于初步了解概念的情况，于是以老师最新三篇文章中都出现的关键词Task Assignment在知网检索了部分文章，挑选了一些作为前期准备工作初步要拜读的文献，如果后续有幸能在老师指导下以这方向为论文课题我会继续深入学习了解。 
 
 
 * [空间众包任务分配算法研究(硕士论文)](https://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CMFD&dbname=CMFD201901&filename=1018314488.nh&uid=WEEvREcwSlJHSldRa1FhdkJtNEYwV1V5cVpmYS92UWFYOFBZUjQ2aEhpaz0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4ggI8Fm4gTkoUKaID8j8gFw!!&v=MzIyNDg3RGgxVDNxVHJXTTFGckNVUjdxZlllUm9GeWpoVWI3S1ZGMjZGckM1R3RYRXA1RWJQSVI4ZVgxTHV4WVM=)
