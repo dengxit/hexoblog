@@ -39,16 +39,19 @@ SETNX 是『SET if Not exists』(如果不存在，则 SET)的简写。
 #以业务逻辑相关参数作为key
 try{
    DB::beginTransaction();
+   //看是否被锁，没有则锁上
    $lock = Redis::setnx($key, 1); # value根据需求设置 
    if (!$lock) {
       //to：该预约已提交 请务重复提交
    }
    //其他业务存储逻辑
    DB::commit();
+   //解锁
    Redis::del($key);
 }catch(\Exception $e){
    //Log
    DB::rollBack();
+   //解锁
    Redis::del($key);
 }
 ```
@@ -83,14 +86,45 @@ public function getLastThirdMessages()
 
        //redis 查询
        if(count($result) > 0){
-           $data['count'] = zcard($key);      # 该用户消息总数
+           $data['count'] = zcard($key);      # 统计该用户消息总数
            foreach ($result as $key => $v){
-               $data['data'][] = self::getPanelListByRedisKey($key);
+               $data['data'][] = self::getDataByRedisKey($key);
            }
        }else{
            //数据库 查询
+               /**
+               *  
+               *   这里查询出来的key再加入缓存 #TODO
+               *
+               **/
        }
        return $data;
    }
+   
+# 对消息确认或者删除
+Redis::zRem($key,$value));
 ```
-未完待续..
+#### 缓存击穿
+
+上文在key查询不到时走DB查询再存入缓存，这样可能会出现 缓存击穿 问题
+
+> key对应的数据在DB存在，但在redis中不存在，若有大量请求过来，这些请求发现缓存过期一般都会从后端DB加载数据并回设到缓存，这个时候请求过大可能会瞬间把后端DB压垮
+
+解决办法：就是在缓存失效的时候,先使用SETNX尝试能否加缓存，当操作成功时，再进行读取数据库回设缓存
+
+```
+#上文TODO代码中的简单实现示例
+
+if(Redis::setnx($mutex_key, $value)){
+    # geyByDB
+    # set 缓存
+    # del($mutex_key)
+}else{  //其他线程setnx成功过了，等待时间从新获取缓存即可
+    sleep(1);
+    getByKey;
+}
+
+```
+
+
+
