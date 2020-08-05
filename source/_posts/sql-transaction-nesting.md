@@ -10,7 +10,7 @@ tags:
 
 最近在业务代码中遇到了Mysql的事务嵌套的情况，伪代码如下
 
-```
+```php
 function A(){
     try{
          beginTransaction;
@@ -51,7 +51,7 @@ function B(){
 * 事务控制和锁定语句
 .........
 
-可以看到「事务控制和锁定语句」会导致隐式提交，也就是说在B方法的beginTransaction语句时之前的内容就都被commit掉了，那么这个时候数据都已经提交至数据库中了，这样在A方法的code1处的代码如果有数据库操作就无法回滚了，因为已经在B方法中commit了
+可以看到「事务控制和锁定语句」会导致隐式提交，也就是说在B方法的beginTransaction语句时之前的内容（code1）就都被commit掉了，那么这个时候数据都已经提交至数据库中了，这样在A方法的code1处的代码如果有数据库操作就无法回滚了，因为已经在B方法中commit了
 
 ##### 解决办法：SAVEPOINT和ROLLBACK TO SAVEPOINT
 
@@ -61,7 +61,7 @@ function B(){
 
 简而言之就是可以设置一个事务保存点，在提交或者回滚事务的时候也可以指定这个保存点，这样就达成了想要的事务嵌套的效果。
 
-```
+```php
 function A(){
     try{
          beginTransaction;
@@ -80,7 +80,7 @@ function A(){
 
 (Laravel framework ^7.0 相关源码)
 
-```
+```php
 public function beginTransaction()
     {
         //创建一个事务
@@ -148,7 +148,7 @@ public function rollBack($toLevel = null)
 
 ```
 
-所以按第一个代码片段的写法也是可以的，不过这样的话回滚逻辑就是B方法接收到异常只回滚B方法的这部分操作，不会影响到code1和code2的操作了。
+所以按第一个代码片段的写法也是可以的，不过由于我们的代码用异常捕捉将代码限制了起来，这样的话回滚逻辑就是B方法接收到异常只回滚B方法的这部分操作，不会影响到code1和code2的操作了，如果想要B中捕捉到异常使外层A也一并回滚的话将B方法中的异常捕捉不做处理转由A方法捕捉处理即可。
 
 
 
