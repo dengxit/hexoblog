@@ -65,3 +65,15 @@ echo 'test/1.x'' | sed 's/tag\///' |tr '.' ' '
 
 /dev/null是一个文件，这个文件比较特殊，所有传给它的东西它都丢弃掉
 ```
+
+##### screen
+
+> 只要Screen本身没有终止，在其内部运行的会话都可以恢复。这一点对于远程登录的用户特别有用——即使网络连接中断，用户也不会失去对已经打开的命令行会话的控制。只要再次登录到主机上执行screen -r就可以恢复会话的运行。同样在暂时离开的时候，也可以执行分离命令detach，在保证里面的程序正常运行的情况下让Screen挂起（切换到后台）
+```
+screen -S example  #开启一个名为 example 的 screen
+control A 再按 D # 离开当前的screen，放入后台执行
+screen -ls  #展示当前挂载的所有screen
+screen -r example #回到 example screen
+control D #将该作业结束
+screen -wipe #检查并删除无法使用的screen
+```
