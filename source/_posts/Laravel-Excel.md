@@ -96,7 +96,7 @@ class UsersController
         $file = $request->file('file');
         try {
             $import = new UsersImport();
-            $import->onlySheets('Sheet 1');
+            $import->onlySheets('Sheet1');
             Excel::import($import, $file);
         } catch (\Exception $e) {
             //可以在UserFirstSheetImport处理表格业务数据验证等，报出对应的消息
