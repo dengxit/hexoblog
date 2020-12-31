@@ -14,3 +14,5 @@ tags:
 * [composer 最佳实践](https://learnku.com/php/t/7609/you-have-to-know-17-composer-best-practices-updated-to-22)
 * [正则可视化](jex.im/regulex)
 * [常用正则大全](https://any86.github.io/any-rule/)
+* [Mysql 行转列](https://cloud.tencent.com/developer/article/1533688)
+* [网站推荐合集](https://www.bilibili.com/video/av88646573/)
