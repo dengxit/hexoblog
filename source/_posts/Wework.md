@@ -39,9 +39,9 @@ $redirect = $app->oauth->withState($state)->redirect($callbackUrl);
 ```php
 //访问上方获取的网页授权链接，会自动跳转https://www.test.com/api/wework/callback?code=CODE&state=STATE
 $app->oauth->detailed()->userFromCode($code); //根据code获取企业用户信息
-// 业务处理，用户数据存储，颁发token
+// 业务处理，用户数据存储，处理state,颁发token
 // 由于项目是前后端分离，所以带token返回给前端
-return redirect()->away('前端项目地址').'?'.$token);
+return redirect()->away('前端项目地址').'?'..http_build_query(['token' => $token]));
 ```
 * 跨域问题参考：
  * [Learnku案例](https://learnku.com/laravel/t/30195)
@@ -75,8 +75,8 @@ $agent_config = [
   'secret' => '应用管理>>内部应用>>Secret',
 ];
 $agent = Factory::work($agent_config);
-$this->agent->jssdk->setUrl($url);
-$config = $this->agent->jssdk->buildAgentConfig($apis, $agentId, $debug = false, $beta = false, $json = true, $openTagList = []);
+$agent->jssdk->setUrl($url);
+$agentConfig = $agent->jssdk->buildAgentConfig($apis, $agentId, $debug = false, $beta = false, $json = true, $openTagList = []);
 //前端带agentConfig获取该客户external_userid再调用后端接口
 $config = [
   'corp_id' => '我的企业>>企业信息>>企业ID',
