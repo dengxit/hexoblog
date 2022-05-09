@@ -41,7 +41,7 @@
     <span title="{{ __('symbols_count_time.time_total') }}">{{ symbolsTimeTotal(site, config.symbols_count_time.awl, config.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}</span>
   {%- endif %}
 </div>
-<a href="http://www.beian.miit.gov.cn/">琼ICP备18000684号-2</a>
+<a href="https://beian.miit.gov.cn/">琼ICP备18000684号-2</a>
 
 {%- if theme.footer.powered %}
   <div class="powered-by">
